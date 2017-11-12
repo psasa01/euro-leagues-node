@@ -1,0 +1,124 @@
+<% layout('./layout') -%>
+
+   <div class="container">
+      <div class="row">
+         <br>
+         <div class="col l6">
+            <h2>
+               <%= results[0].name %>
+            </h2>
+         </div>
+
+         <div class="col l4">
+
+         </div>
+
+         <div class="col l2">
+            <img src="
+               <%= results[0].crestUrl %>
+            " alt="" height="125px">
+         </div>
+      </div>
+
+      <div class="row">
+
+         <div class="col l12">
+            <h4>Players</h4>
+         </div>
+
+      </div>
+      <div class="row">
+         <div class="col l12">
+            <table class="bordered highlight">
+               <tr>
+                  <th>Number</th>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Date of Birth</th>
+                  <th>Nationality</th>
+               </tr>
+               <% for (var i = 0; i < results[3].players.length; i++) { %>
+                  <tr>
+                     <td>
+                        <%= results[3].players[i].jerseyNumber %>
+                     </td>
+                     <td>
+                        <b><%= results[3].players[i].name %></b>
+                     </td>
+                     <td>
+                        <%= results[3].players[i].position %>
+                     </td>
+                     <td>
+                        <%= results[3].players[i].dateOfBirth %>
+                     </td>
+                     <td>
+                        <%= results[3].players[i].nationality %>
+                     </td>
+                  </tr>
+                  <% } %>
+            </table>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col l12">
+            <h4>Fixtures</h4>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col m12 l6">
+            <table class="bordered striped">
+               <tr>
+                  <th colspan=6>
+                     Last games played
+                  </th>
+               </tr>
+               <% for(var i = 0; i < played.length; i++) { %>
+                  <tr>
+                     <td>
+                        <%= moment(played[i].date).format('Do MMM YYYY, kk:mm') %>
+                     </td>
+                     <td class="right-align">
+                        <%= played[i].homeTeamName %>
+                     </td>
+                     <td class="right-align">
+                        <%= played[i].result.goalsHomeTeam %>
+                     </td>
+                     <td class="center-align">-</td>
+                     <td class="left-align">
+                        <%= played[i].result.goalsAwayTeam %>
+                     </td>
+                     <td class="left-align">
+                        <%= played[i].awayTeamName %>
+                     </td>
+                  </tr>
+                  <% } %>
+            </table>
+         </div>
+
+         <div class="col m12 l6">
+            <table class="bordered striped">
+               <th colspan=8>
+                  Upcoming games
+               </th>
+               <% for(var i = 0; i < fixtures.length; i++) { %>
+                  <tr>
+                     <td>
+                        <%= moment(fixtures[i].date).format('Do MMM YYYY, kk:mm') %>
+                     </td>
+                     <td class="right-align">
+                        <%= fixtures[i].homeTeamName %>
+                     </td>
+                     <td class="center-align">V</td>
+                     <td class="left-align">
+                        <%= fixtures[i].awayTeamName %>
+                     </td>
+                  </tr>
+                  <% } %>
+            </table>
+         </div>
+
+
+      </div>
+   </div>

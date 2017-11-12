@@ -1,0 +1,384 @@
+<% layout('./layout') -%>
+
+   <div class="container">
+      <div class="card">
+         <div class="card-content">
+            <h4>European soccer league standings for
+               <%= moment().format( 'DD. MMM YYYY.') %>
+            </h4>
+         </div>
+
+         <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+               <li class="tab"><a href="#pl">Premier League</a></li>
+               <li class="tab"><a href="#primera">La Liga</a></li>
+               <li class="tab"><a href="#seriea">Serie A</a></li>
+               <li class="tab"><a href="#bundesliga">Bundesliga</a></li>
+               <li class="tab"><a href="#ligue1">Ligue 1</a></li>
+               <li class="tab"><a href="#primeira">Primeira</a></li>
+               <li class="tab"><a href="#eredivisie">Eredivisie</a></li>
+            </ul>
+         </div>
+
+         <div class="card-content grey lighten-4">
+            <div id="pl">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[0].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[0].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[0].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[0].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[0].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[0].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[0].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[0].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[0].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[0].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id="primera">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[1].standing.length; i++) { %>
+
+                           <td>
+                              <% var team = results[1].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[1].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[1].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[1].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[1].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[1].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[1].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[1].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[1].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id="seriea">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[2].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[2].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[2].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[2].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[2].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[2].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[2].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[2].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[2].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[2].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id="bundesliga">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[3].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[2].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[3].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[3].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[3].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[3].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[3].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[3].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[3].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[3].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+
+            </div>
+            <div id="ligue1">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[4].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[4].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[4].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[4].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[4].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[4].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[4].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[4].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[4].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[4].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id="primeira">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[5].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[5].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[5].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[5].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[5].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[5].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[5].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[5].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[5].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[5].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id="eredivisie">
+               <table class="highlight">
+                  <thead>
+                     <tr>
+                        <th>Position</th>
+                        <th>Club Name</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Draws</th>
+                        <th>Goal Diference</th>
+                        <th>Points</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr class="blue lighten-5">
+                        <% for(var i = 0; i < results[6].standing.length; i++) { %>
+                           <td>
+                              <% var team = results[6].standing[i]._links.team.href; %>
+                                 <% var teamID = team.slice(38); %>
+                                    <%= results[6].standing[i].position %>.
+                           </td>
+                           <td>
+                              <a href="/teams/<%= teamID %>">
+                                 <%= results[6].standing[i].teamName %>
+                              </a>
+                           </td>
+                           <td>
+                              <%= results[6].standing[i].wins %>
+                           </td>
+                           <td>
+                              <%= results[6].standing[i].losses %>
+                           </td>
+                           <td>
+                              <%= results[6].standing[i].draws %>
+                           </td>
+                           <td>
+                              <%= results[6].standing[i].goalDifference %>
+                           </td>
+                           <td class="
+                             <% if(results[6].standing[i].position === 1) { %> 
+                             blue-text 
+                             <% } %>
+                             red-text center-align">
+                              <b> <%= results[6].standing[i].points %> </b>
+                           </td>
+                     </tr>
+                     <% } %>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>

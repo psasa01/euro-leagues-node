@@ -1,0 +1,22 @@
+{
+  "name": "node-express-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "ejs-mate": "^2.3.0",
+    "ergast-client": "^0.2.8",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.1",
+    "request": "^2.83.0"
+  }
+}
