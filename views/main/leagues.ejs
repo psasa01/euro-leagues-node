@@ -192,7 +192,7 @@
                      <tr class="blue lighten-5">
                         <% for(var i = 0; i < results[3].standing.length; i++) { %>
                            <td>
-                              <% var team = results[2].standing[i]._links.team.href; %>
+                              <% var team = results[3].standing[i]._links.team.href; %>
                                  <% var teamID = team.slice(38); %>
                                     <%= results[3].standing[i].position %>.
                            </td>
