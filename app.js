@@ -17,7 +17,7 @@ const bearerToken = 'e44a7092586a4cfb8d7890f56837000f';
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
