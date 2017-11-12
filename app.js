@@ -38,11 +38,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns1 = JSON.parse(body);
-
                      return next(null, uns1);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -55,11 +53,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns2 = JSON.parse(body);
-
                      return next(null, uns2);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -72,11 +68,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns3 = JSON.parse(body);
-
                      return next(null, uns3);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -89,11 +83,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns4 = JSON.parse(body);
-
                      return next(null, uns4);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -106,11 +98,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns5 = JSON.parse(body);
-
                      return next(null, uns5);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -123,11 +113,9 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns6 = JSON.parse(body);
-
                      return next(null, uns6);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -140,15 +128,12 @@ app.get('/leagues', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns7 = JSON.parse(body);
-
                      return next(null, uns7);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
-
                   ],
       function (err, results) {
          // console.log(JSON.stringify(results, null, 2));
@@ -157,7 +142,6 @@ app.get('/leagues', (req, res) => {
             moment
          });
       });
-
 });
 
 app.get('/teams/:id', (req, res) => {
@@ -175,7 +159,6 @@ app.get('/teams/:id', (req, res) => {
                      return next(null, uns1);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -188,11 +171,9 @@ app.get('/teams/:id', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns2 = JSON.parse(body);
-
                      return next(null, uns2);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -205,11 +186,9 @@ app.get('/teams/:id', (req, res) => {
                function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                      var uns3 = JSON.parse(body);
-
                      return next(null, uns3);
                   };
                   console.log(error);
-
                   next(error);
                });
                      },
@@ -230,15 +209,12 @@ app.get('/teams/:id', (req, res) => {
                      },
                               ],
       function (err, results) {
-
          const fixtures = _.take(_.filter(results[2].fixtures, function (match) {
             return match.status === 'SCHEDULED';
          }), 8)
-
          const played = _.take(_.filter(results[1].fixtures, function (match) {
             return match.status === 'FINISHED';
          }), 8)
-
          console.log(JSON.stringify(results[3], null, 2));
          res.render("main/teams", {
             results,
@@ -248,25 +224,6 @@ app.get('/teams/:id', (req, res) => {
          });
       });
 });
-
-//app.get('/teams/:id', (req, res) => {
-//
-//                     var id = req.params.id
-//                     request('http://api.football-data.org/v1/teams/' + id, {
-//                        'headers': {
-//                           'X-Auth-Token': bearerToken
-//                        }
-//                     }, (error, response, body) => {
-//                        if (!error && response.statusCode === 200) {
-//                           body = JSON.parse(body);
-//
-//
-//                           res.render('main/teams', {
-//                              body
-//                           });
-//                        }
-//                     });
-//                  });
 
 app.listen(port, () => {
    console.log(`Server started on ${port}`);
