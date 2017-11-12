@@ -14,6 +14,8 @@ const app = express();
 
 const bearerToken = 'e44a7092586a4cfb8d7890f56837000f';
 
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 app.use(express.static('./public'));
 
@@ -265,8 +267,6 @@ app.get('/teams/:id', (req, res) => {
 //                        }
 //                     });
 //                  });
-
-const port = 3000;
 
 app.listen(port, () => {
    console.log(`Server started on ${port}`);
