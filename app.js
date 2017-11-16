@@ -7,14 +7,13 @@ const async = require('async');
 const moment = require('moment');
 const _ = require('lodash');
 
-const ErgastClient = require('ergast-client');
-const ergast = new ErgastClient();
-
 const app = express();
 
 const bearerToken = 'e44a7092586a4cfb8d7890f56837000f';
 
 const port = process.env.PORT || 3000;
+
+
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
@@ -27,7 +26,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/leagues', (req, res) => {
-
    async.parallel([
         function (next) {
             request('http://api.football-data.org/v1/competitions/445/leagueTable', {
