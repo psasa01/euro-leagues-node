@@ -213,7 +213,7 @@ app.get('/teams/:id', (req, res) => {
          const played = _.take(_.filter(results[1].fixtures, function (match) {
             return match.status === 'FINISHED';
          }), 8)
-         console.log(JSON.stringify(results[3], null, 2));
+         // console.log(JSON.stringify(results[3], null, 2));
          res.render("main/teams", {
             results,
             fixtures,
