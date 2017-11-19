@@ -43,7 +43,7 @@
                                     <%= results[0].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[0].standing[i].teamName %>
                               </a>
                            </td>
@@ -94,7 +94,7 @@
                                     <%= results[1].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[1].standing[i].teamName %>
                               </a>
                            </td>
@@ -145,7 +145,7 @@
                                     <%= results[2].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[2].standing[i].teamName %>
                               </a>
                            </td>
@@ -196,7 +196,7 @@
                                     <%= results[3].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[3].standing[i].teamName %>
                               </a>
                            </td>
@@ -247,7 +247,7 @@
                                     <%= results[4].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[4].standing[i].teamName %>
                               </a>
                            </td>
@@ -298,7 +298,7 @@
                                     <%= results[5].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[5].standing[i].teamName %>
                               </a>
                            </td>
@@ -349,7 +349,7 @@
                                     <%= results[6].standing[i].position %>.
                            </td>
                            <td>
-                              <a href="/teams/<%= teamID %>">
+                              <a href="/teams/<%= teamID %>" onClick="showSpinner();">
                                  <%= results[6].standing[i].teamName %>
                               </a>
                            </td>
@@ -379,4 +379,25 @@
             </div>
          </div>
       </div>
+
+      <div class="row">
+         <div class="spinner" id="spinner">
+            <div class="spinspin">
+               <div class="preloader-wrapper big active loader center-align">
+                  <div class="spinner-layer spinner-blue-only">
+                     <div class="circle-clipper left">
+                        <div class="circle"></div>
+                     </div>
+                     <div class="gap-patch">
+                        <div class="circle"></div>
+                     </div>
+                     <div class="circle-clipper right">
+                        <div class="circle"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
    </div>
